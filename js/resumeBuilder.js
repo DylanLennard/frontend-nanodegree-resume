@@ -1,53 +1,11 @@
-// .append is using jquery
-//# means looking for element with id of "main"
-//$("#main").append("Dylan Lennard");
-//note, the $ has no real meaning, it just comes out of uniformity
-
-//var email = "dylanjlennard@yahoo.com";
-//var newEmail = email.replace("yahoo", "google");
-//console.log(email);
-//console.log(newEmail);
-
-
-//var awesomeThoughts = "I am Dylan and I am AWESOME";
-//console.log(awesomeThoughts);
-
-//var funThoughts = awesomeThoughts.replace("AWESOME", "FUN");
-//$("#main").append(funThoughts);
-
-
-//mixing .replace and .append() to replace
-//var name = "Dylan Lennard"
-//var role = "Associate Product Manager and Product Analyst"
-//var formattedName = HTMLheaderName.replace("%data%", name);
-//var formattedRole = HTMLheaderRole.replace("%data%", role);
-
-// prepend name and role into the page
-//$("#header").prepend(formattedName);
-//$("#header").prepend(formattedRole);
-
-//playing with strings
-//s = audacity;
-// s = s[1].toUpperCase + s.slice(2); will turn it to Udacity!
-
-///arrays in js are just like lists
-// var skills = ["R", "SQL", "Python", "Data Analysis", "Being Awesome"];
-// $("#main").append(skills);
-// $("#main").append(skills[0]);
-
-// slice, pop, push, (un)shift, and split() are all good methods for arrays
-
-//objects
-//weirdly, there are no classes in js! only objects
-//object literal notation:
 var bio = {
     "name": "Dylan",
     "role": "Associate Product Manager and Product Analyst",
-    "contact": {
+    "contacts": {
         "email": "dylanjlennard@gmail.com",
         "mobile": "(530)-788-8853",
         "github": "github.com/DylanLennard",
-        "LinkedIn": "linkedin.com/in/DylanLennard"
+        "LinkedIn": "linkedin.com/in/DylanLennard" //optional twitter
     },
     "bioPic": "images/me.jpg ",
     "welcomeMessage": "Hello, friends, and welcome!",
@@ -55,19 +13,59 @@ var bio = {
     "skills": ["R", "SQL", "Python", "Data Analysis", "Being Awesome"]
 };
 
-// can then define new methods/attributes outside of curly braces
-// we also have no need to use var
-// ex: bio.city = "Redwood City" or bio['city'] = "Redwoood City"
+var education = {
+    "schools": [{
+        "name": "University of California-Davis",
+        "location": "Davis, CA",
+        "major": ["Economics"],
+        "minor": "Statistics",
+        "degree": ["Bachelor of Arts"],
+        "dates": "2015"
+            //url ?
+    }, {
+        "name": "Udacity",
+        "location": "None",
+        "major": ["Data Analytics"],
+        "degree": "Nanodegree",
+        "dates": "2016"
 
-$("#main").append(bio.welcomeMessage)
-var formattedName = HTMLheaderName.replace("%data%", bio.name);
-var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-var formattedContact = HTMLcontactGeneric.replace("%data%", bio.contact);
+    }],
+    "online courses": [] //contains title, school, dates, url parameters
+        //online courses include the R courses for coursera
+}
 
-$("#header").prepend(formattedName);
-$("#header").prepend(formattedRole);
+var work = {
+    "jobs": [{
+            "employer": "Equilar",
+            "title": "Associate Product Manager and Product Analyst",
+            "location": "Redwood City, CA",
+            "dates": "June 2016 - Present",
+            "description": "I did things"
+        }, {
+            "employer": "Equilar",
+            "title": "Research Analyst",
+            "location": "Redwood City, CA",
+            "dates": "August 2015 - December 2016",
+            "description": "I also did things"
+        }] //employer, title, location, dates worked and description
+}
 
-
-var work = {} //list out work info using dot notation
-
-var education = {} // list out education info using bracket notation
+var projects = {
+        "projects": [{
+                "title": "TSR vs. Percent of Total Compensation in Equity",
+                "dates": "August 2016 - Present",
+                "description": "Did things"
+            }, {
+                "title": "Education Extraction Open Project Initiative",
+                "dates": "October 2015 - Present",
+                "description": "Did things"
+            }, {
+                "title": "Executive Stock Ownership Guidelines Report",
+                "dates": "August 2016 - Present",
+                "description": "Did things"
+            }, {
+                "title": "Effect of Vehicle Miles Traveled on SF Bay Area Basin",
+                "dates": "August 2016 - Present",
+                "description": "Did things"
+            }] //title, dates and description strings, and an images array with URL strings for project images.
+    } //
