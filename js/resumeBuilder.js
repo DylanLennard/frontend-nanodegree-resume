@@ -54,19 +54,23 @@ var projects = {
         "projects": [{
                 "title": "TSR vs. Percent of Total Compensation in Equity",
                 "dates": "August 2016 - Present",
-                "description": "Did things"
+                "description": "Did things",
+                "images": []
             }, {
                 "title": "Education Extraction Open Project Initiative",
                 "dates": "October 2015 - Present",
-                "description": "Did things"
+                "description": "Did things",
+                "images": []
             }, {
                 "title": "Executive Stock Ownership Guidelines Report",
                 "dates": "August 2016 - Present",
-                "description": "Did things"
+                "description": "Did things",
+                "images": []
             }, {
                 "title": "Effect of Vehicle Miles Traveled on SF Bay Area Basin",
                 "dates": "August 2016 - Present",
-                "description": "Did things"
+                "description": "Did things",
+                "images": []
             }] //title, dates and description strings, and an 'images' array with URL strings for project images.
     }
     //FYI, newHTML = newHTML.replace(/<|>/g, "");
@@ -133,8 +137,13 @@ projects.display = function() {
         var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.projects[i].description);
         $(".project-entry:last").append(formattedProjectDescription);
 
-        // add photos for each project later on
-        // see encapsulation video
+        // add photos for each project later on and double check this section
+        // if (projects.projects[i].images.length > 0) {
+        //     for (var j = 0; j < projects.projects[i].images.length; j++) {
+        //         var formattedProjectImages = HTMLprojectImage.replace("%data%", projects.projects[i].images[j]);
+        //         $(".project-entry:last").append(formattedProjectImages);
+        //     }
+        // }
 
     }
 }
