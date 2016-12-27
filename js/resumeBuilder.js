@@ -1,5 +1,5 @@
 var bio = {
-    "name": "Dylan",
+    "name": "Dylan Lennard",
     "role": "Associate Product Manager and Product Analyst",
     "contacts": {
         "email": "dylanjlennard@gmail.com",
@@ -89,19 +89,53 @@ if (bio.skills.length > 0) {
     console.log("Bio is empty.");
 }
 
-for (var i = 0; i < work.jobs.length; i++) { //again, not a fan of this syntax
-    $("#workExperience").append(HTMLworkStart)
+function displayWork() {
+    for (var i = 0; i < work.jobs.length; i++) {
+        $("#workExperience").append(HTMLworkStart)
 
-    var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[i].employer);
-    var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[i].title);
-    var formattedEmployerTitle = formattedEmployer + formattedTitle;
-    $(".work-entry:last").append(formattedEmployerTitle);
+        var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[i].employer);
+        var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[i].title);
+        var formattedEmployerTitle = formattedEmployer + formattedTitle;
+        $(".work-entry:last").append(formattedEmployerTitle);
 
-    var formattedDates = HTMLworkDates.replace("%data%", work.jobs[i].dates);
-    $(".work-entry:last").append(formattedDates);
+        var formattedDates = HTMLworkDates.replace("%data%", work.jobs[i].dates);
+        $(".work-entry:last").append(formattedDates);
 
-    var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[i].description);
-    $(".work-entry:last").append(formattedDescription);
+        var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[i].description);
+        $(".work-entry:last").append(formattedDescription);
 
+    }
+}
+
+displayWork();
+
+$("#main").append(internationalizeButton);
+
+function inName(nameString) {
+    var newName = nameString.trim().split(" ");
+    newName[1] = newName[1].toUpperCase();
+    newName[0] = newName[0].slice(0, 1).toUpperCase() + newName[0].slice(1).toLowerCase();
+    var newName = newName[0] + " " + newName[1];
+    return newName;
 
 }
+
+projects.display = function() {
+    for (var i = 0; i < projects.projects.length; i++) {
+        $("#projects").append(HTMLprojectStart);
+
+        var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.projects[i].title);
+        $(".project-entry:last").append(formattedProjectTitle);
+
+        var formattedProjectdates = HTMLprojectDates.replace("%data%", projects.projects[i].dates);
+        $(".project-entry:last").append(formattedProjectdates);
+
+        var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.projects[i].description);
+        $(".project-entry:last").append(formattedProjectDescription);
+
+        // add photos for each project later on
+        // see encapsulation video
+
+    }
+}
+projects.display();
