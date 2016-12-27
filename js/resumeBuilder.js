@@ -72,8 +72,15 @@ var projects = {
     //FYI, newHTML = newHTML.replace(/<|>/g, "");
     // works becasue the // breaks the characters rather than quotations.
 
-// if (bio.skills != null) {
-//     console.log("Bio is empty")
-// } else {
-//     console.log("Bio is not empty!")
-// }
+if (bio.name !== null) { //this was necessary to get everything to show up
+    var formattedName = HTMLheaderName.replace("%data%", bio.name);
+    $("#header").append(formattedName);
+}
+
+if (bio.skills.length > 0) {
+    $("#header").append(HTMLskillsStart);
+    var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+    $("#skills").append(formattedSkill);
+} else {
+    console.log("Bio is empty.");
+}
