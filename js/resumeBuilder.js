@@ -67,5 +67,13 @@ var projects = {
                 "title": "Effect of Vehicle Miles Traveled on SF Bay Area Basin",
                 "dates": "August 2016 - Present",
                 "description": "Did things"
-            }] //title, dates and description strings, and an images array with URL strings for project images.
-    } //
+            }] //title, dates and description strings, and an 'images' array with URL strings for project images.
+    }
+    //FYI, newHTML = newHTML.replace(/<|>/g, "");
+    // works becasue the // breaks the characters rather than quotations.
+
+// if (bio.skills != null) {
+//     console.log("Bio is empty")
+// } else {
+//     console.log("Bio is not empty!")
+// }
