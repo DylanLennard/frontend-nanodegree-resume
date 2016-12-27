@@ -72,15 +72,36 @@ var projects = {
     //FYI, newHTML = newHTML.replace(/<|>/g, "");
     // works becasue the // breaks the characters rather than quotations.
 
+// append header here:
 if (bio.name !== null) { //this was necessary to get everything to show up
     var formattedName = HTMLheaderName.replace("%data%", bio.name);
     $("#header").append(formattedName);
 }
 
+// append skills
 if (bio.skills.length > 0) {
     $("#header").append(HTMLskillsStart);
-    var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
-    $("#skills").append(formattedSkill);
+    for (var i = 0; i < bio.skills.length; i++) { // i don't like this syntax
+        var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
+        $("#skills").append(formattedSkill);
+    }
 } else {
     console.log("Bio is empty.");
+}
+
+for (var i = 0; i < work.jobs.length; i++) { //again, not a fan of this syntax
+    $("#workExperience").append(HTMLworkStart)
+
+    var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[i].employer);
+    var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[i].title);
+    var formattedEmployerTitle = formattedEmployer + formattedTitle;
+    $(".work-entry:last").append(formattedEmployerTitle);
+
+    var formattedDates = HTMLworkDates.replace("%data%", work.jobs[i].dates);
+    $(".work-entry:last").append(formattedDates);
+
+    var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[i].description);
+    $(".work-entry:last").append(formattedDescription);
+
+
 }
