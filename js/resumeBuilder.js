@@ -145,6 +145,12 @@ projects.display = function() {
         //     }
         // }
 
+
+
     }
 }
 projects.display();
+
+
+// TODO: map still not implementing correctly
+// $("#mapDiv").append(googleMap);
